@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://juanjose130303.github.io/md-water/sitemap.xml
