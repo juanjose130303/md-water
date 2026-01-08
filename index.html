@@ -206,42 +206,51 @@
       </p>
     </div>
 
-    <div class="card">
-      <form class="lead-form">
+    <form 
+  action="https://docs.google.com/forms/d/e/1FAIpQLSffzEqUFQQMRKx5C7fTF8rwNyvplbKiI0uFlO9NfkqA6DrgDA/viewform?usp=header"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="submitted=true;"
+  class="lead-form"
+>
 
-        <div class="form-grid">
-          <div class="form-group">
-            <label>Nombre</label>
-            <input type="text" placeholder="Tu nombre">
-          </div>
+  <div class="grid-2">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" name="entry.72589160" placeholder="Tu nombre" required>
+    </div>
 
-          <div class="form-group">
-            <label>Ciudad</label>
-            <input type="text" placeholder="Tu ciudad">
-          </div>
+    <div class="form-group">
+      <label>Ciudad</label>
+      <input type="text" name="entry.992979318" placeholder="Tu ciudad" required>
+    </div>
 
-          <div class="form-group">
-            <label>Celular</label>
-            <input type="tel" placeholder="Ej: 3001234567">
-          </div>
+    <div class="form-group">
+      <label>Celular</label>
+      <input type="tel" name="entry.245707119" placeholder="Ej: 3001234567" required>
+    </div>
 
-          <div class="form-group">
-            <label>¿Qué te interesa?</label>
-            <div class="select-wrapper">
-              <select>
-                <option selected disabled>Selecciona una opción</option>
-                <option>Filtro MD Hogar</option>
-                <option>Filtro MD Dispensador</option>
-                <option>Cartucho Cerámico</option>
-                <option>Cartucho Carbón Activado</option>
-              </select>
-            </div>
-          </div>
-        </div>
+    <div class="form-group">
+      <label>¿Qué te interesa?</label>
+      <div class="select-wrapper">
+        <select name="entry.281527053" required>
+          <option value="">Selecciona una opción</option>
+          <option>Filtro MD Hogar</option>
+          <option>Filtro MD Dispensador</option>
+          <option>Cartuchos</option>
+          <option>Asesoría</option>
+        </select>
+      </div>
+    </div>
+  </div>
 
-        <a href="#" class="btn btn-primary btn-full">
-          Enviar solicitud
-        </a>
+  <button type="submit" class="btn btn-primary btn-full">
+    Enviar solicitud
+  </button>
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
 
       </form>
     </div>
@@ -272,7 +281,7 @@
       <div class="footer-info">
         <p>Lunes – Viernes</p>
         <p>7:00 am – 5:00 pm</p>
-        <p>Bogotá, Colombia</p>
+        <p>Bucaramanga, Colombia</p>
       </div>
     </div>
 

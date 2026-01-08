@@ -72,3 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+
+let submitted = false;
+
+document.querySelector('.lead-form').addEventListener('submit', () => {
+  setTimeout(() => {
+    alert('¡Gracias! Un asesor MD se comunicará contigo pronto.');
+  }, 500);
+});
