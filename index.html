@@ -206,28 +206,43 @@
       </p>
     </div>
 
-    <form 
-  action="https://docs.google.com/forms/d/e/1FAIpQLSffzEqUFQQMRKx5C7fTF8rwNyvplbKiI0uFlO9NfkqA6DrgDA/viewform?usp=header"
+    <form
+  class="lead-form"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSffzEqUFQQMRKx5C7fTF8rwNyvplbKiI0uFlO9NfkqA6DrgDA/formResponse"
   method="POST"
   target="hidden_iframe"
-  onsubmit="submitted=true;"
-  class="lead-form"
 >
 
   <div class="grid-2">
+
     <div class="form-group">
       <label>Nombre</label>
-      <input type="text" name="entry.72589160" placeholder="Tu nombre" required>
+      <input
+        type="text"
+        name="entry.72589160"
+        placeholder="Tu nombre"
+        required
+      >
     </div>
 
     <div class="form-group">
       <label>Ciudad</label>
-      <input type="text" name="entry.992979318" placeholder="Tu ciudad" required>
+      <input
+        type="text"
+        name="entry.992979318"
+        placeholder="Tu ciudad"
+        required
+      >
     </div>
 
     <div class="form-group">
       <label>Celular</label>
-      <input type="tel" name="entry.245707119" placeholder="Ej: 3001234567" required>
+      <input
+        type="tel"
+        name="entry.245707119"
+        placeholder="Ej: 3001234567"
+        required
+      >
     </div>
 
     <div class="form-group">
@@ -235,19 +250,24 @@
       <div class="select-wrapper">
         <select name="entry.281527053" required>
           <option value="">Selecciona una opción</option>
-          <option>Filtro MD Hogar</option>
-          <option>Filtro MD Dispensador</option>
-          <option>Cartuchos</option>
-          <option>Asesoría</option>
+          <option value="Filtro MD Hogar">Filtro MD Hogar</option>
+          <option value="Filtro MD Dispensador">Filtro MD Dispensador</option>
+          <option value="Cartuchos">Cartuchos</option>
+          <option value="Asesoría">Asesoría</option>
         </select>
       </div>
     </div>
+
   </div>
 
   <button type="submit" class="btn btn-primary btn-full">
     Enviar solicitud
   </button>
 </form>
+
+<!-- IFRAME ÚNICO Y FUERA DEL FORM -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
 
 <iframe name="hidden_iframe" style="display:none;"></iframe>
 
