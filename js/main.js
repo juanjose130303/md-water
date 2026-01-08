@@ -1,88 +1,73 @@
-document.addEventListener("DOMContentLoaded", () => {
+form.addEventListener("submit", (e) => {
 
-  /* ===============================
-     SCROLL REVEAL (ANIMACIONES)
-  =============================== */
-  const reveals = document.querySelectorAll(".reveal");
+  // ===============================
+  // VALIDACIONES UX
+  // ===============================
 
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
+  const nombre  = form.querySelector('[name="entry.72589160"]');
+  const ciudad  = form.querySelector('[name="entry.992979318"]');
+  const celular = form.querySelector('[name="entry.245707119"]');
+  const interes = form.querySelector('[name="entry.281527053"]');
 
-    reveals.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 80) {
-        el.classList.add("visible");
-      }
-    });
-  };
+  // Limpiar estados previos
+  [nombre, ciudad, celular, interes].forEach(el => {
+    el.style.borderColor = "";
+  });
 
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
+  // Validar nombre
+  if (!nombre.value.trim()) {
+    nombre.style.borderColor = "var(--primary)";
+    nombre.focus();
+    e.preventDefault();
+    return;
+  }
 
+  // Validar ciudad
+  if (!ciudad.value.trim()) {
+    ciudad.style.borderColor = "var(--primary)";
+    ciudad.focus();
+    e.preventDefault();
+    return;
+  }
 
-  /* ===============================
-     FORMULARIO → GOOGLE FORMS + WHATSAPP
-  =============================== */
-  const form = document.querySelector(".lead-form");
-  if (!form) return;
+  // Validar celular (mínimo 10 dígitos)
+  const celularLimpio = celular.value.replace(/\D/g, "");
+  if (celularLimpio.length < 10) {
+    celular.style.borderColor = "var(--primary)";
+    celular.focus();
+    e.preventDefault();
+    return;
+  }
 
-  form.addEventListener("submit", () => {
+  // Validar selección
+  if (!interes.value) {
+    interes.style.borderColor = "var(--primary)";
+    interes.focus();
+    e.preventDefault();
+    return;
+  }
 
-    // Mensaje de éxito y botón
-    const successMsg = document.querySelector(".form-success");
-    const submitBtn = form.querySelector("button[type='submit']");
+  // ===============================
+  // WHATSAPP (NO SE TOCA LÓGICA)
+  // ===============================
 
-    // Mostrar mensaje visual
-    if (successMsg) {
-      successMsg.style.display = "block";
-    }
-
-    // Desactivar botón para evitar doble envío
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Enviado ✓";
-      submitBtn.style.opacity = ".85";
-    }
-
-    // Obtener valores del formulario
-    const nombre  = form.querySelector('[name="entry.72589160"]')?.value || "";
-    const ciudad  = form.querySelector('[name="entry.992979318"]')?.value || "";
-    const celular = form.querySelector('[name="entry.245707119"]')?.value || "";
-    const interes = form.querySelector('[name="entry.281527053"]')?.value || "";
-
-    // Mensaje para WhatsApp
-    const mensaje = `
+  const mensaje = `
 Hola 👋
 Quiero información sobre filtros MD.
 
-🧑 Nombre: ${nombre}
-📍 Ciudad: ${ciudad}
-📱 Celular: ${celular}
-💧 Interés: ${interes}
-    `.trim();
+🧑 Nombre: ${nombre.value}
+📍 Ciudad: ${ciudad.value}
+📱 Celular: ${celular.value}
+💧 Interés: ${interes.value}
+  `.trim();
 
-    // ⚠️ Número de WhatsApp (formato internacional)
-    const telefono = "573018220451";
+  const telefono = "573018220451";
 
-    // Abrir WhatsApp luego del envío a Google Forms
-    setTimeout(() => {
-      window.open(
-        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
-        "_blank"
-      );
-    }, 800);
+  setTimeout(() => {
+    window.open(
+      `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
+      "_blank"
+    );
+  }, 800);
 
-  });
-
-});
-
-
-// Scroll suave a contacto (mobile UX)
-document.querySelectorAll('a[href="#contacto"]').forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    document.querySelector("#contacto").scrollIntoView({
-      behavior: "smooth"
-    });
-  });
 });
