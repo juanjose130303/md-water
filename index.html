@@ -216,21 +216,23 @@
   <div class="grid-2">
 
     <div class="form-group">
-      <label>Nombre</label>
+      <label>Tu Nombre</label>
       <input
         type="text"
         name="entry.72589160"
         placeholder="Tu nombre"
+        autocomplete="name"
         required
       >
     </div>
 
     <div class="form-group">
-      <label>Ciudad</label>
+      <label>Tu Ciudad</label>
       <input
         type="text"
         name="entry.992979318"
         placeholder="Tu ciudad"
+        autocomplete="address-level2"
         required
       >
     </div>
@@ -241,6 +243,8 @@
         type="tel"
         name="entry.245707119"
         placeholder="Ej: 3001234567"
+        inputmode="numeric"
+        autocomplete="tel"
         required
       >
     </div>
@@ -260,9 +264,16 @@
 
   </div>
 
+  
   <button type="submit" class="btn btn-primary btn-full">
-    Enviar solicitud
-  </button>
+  Enviar solicitud
+</button>
+
+<p class="form-success" style="display:none;">
+  ✔️ Solicitud enviada correctamente.<br>
+  Un asesor MD se comunicará contigo en breve.
+</p>
+
 </form>
 
 <!-- IFRAME ÚNICO Y FUERA DEL FORM -->
@@ -345,6 +356,14 @@
   </div>
 </footer>
 
+<!-- CTA WHATSAPP MOBILE -->
+<a
+  href="https://wa.me/3018220451"
+  target="_blank"
+  class="mobile-cta"
+>
+  Hablar con asesor MD
+</a>
 
 </body>
 </html>
