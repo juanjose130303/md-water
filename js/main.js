@@ -81,3 +81,43 @@ document.querySelector('.lead-form').addEventListener('submit', () => {
     alert('¡Gracias! Un asesor MD se comunicará contigo pronto.');
   }, 500);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const form = document.querySelector(".lead-form");
+
+  if (!form) return;
+
+  form.addEventListener("submit", function () {
+
+    // Tomar valores
+    const nombre = form.querySelector('[name^="entry"]').value;
+    const ciudad = form.querySelectorAll('[name^="entry"]')[1].value;
+    const celular = form.querySelectorAll('[name^="entry"]')[2].value;
+    const interes = form.querySelectorAll('[name^="entry"]')[3].value;
+
+    // Mensaje WhatsApp
+    const mensaje = `
+Hola 👋
+Quiero más información sobre filtros MD.
+
+🧑 Nombre: ${nombre}
+📍 Ciudad: ${ciudad}
+📱 Celular: ${celular}
+💧 Interés: ${interes}
+    `.trim();
+
+    // TU NÚMERO (cámbialo)
+    const telefono = "573018220451";
+
+    // Redirección (delay corto para que Google Forms reciba datos)
+    setTimeout(() => {
+      window.open(
+        `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
+        "_blank"
+      );
+    }, 600);
+
+  });
+
+});
