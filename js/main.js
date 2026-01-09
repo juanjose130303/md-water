@@ -100,3 +100,21 @@ Quiero información sobre filtros MD.
   });
 
 });
+
+
+/* ===============================
+   NEWSLETTER → GOOGLE FORMS
+=============================== */
+
+const newsletterForm = document.querySelector(".newsletter-form");
+
+if (newsletterForm) {
+  const successMsg = document.querySelector(".newsletter-success");
+
+  newsletterForm.addEventListener("submit", () => {
+    setTimeout(() => {
+      newsletterForm.reset();
+      if (successMsg) successMsg.style.display = "block";
+    }, 800);
+  });
+}

@@ -494,23 +494,41 @@
     </div>
 
     <!-- Columna 3: Newsletter -->
-    <div class="footer-newsletter">
-      <h4>Suscríbete al boletín</h4>
-      <p>
-        Recibe novedades, ofertas y contenidos sobre calidad del agua.
-      </p>
+    <div class="newsletter-premium">
+  <h4>Contenido exclusivo sobre agua</h4>
+  <p>
+    Consejos, ofertas y novedades para mejorar la calidad del agua en tu hogar.
+    Sin spam.
+  </p>
 
-      <form class="newsletter-form">
-        <input type="email" placeholder="Correo electrónico" required />
-        <button type="submit">Enviar</button>
-      </form>
-
-      <small>
-        Al suscribirte aceptas nuestra política de privacidad.
-      </small>
+  <form
+    class="newsletter-form"
+    action="https://docs.google.com/forms/d/e/1FAIpQLScZpj4ZbJeck--2LjuWXYp1iMu8caCpJXEw0xb1VfkZW0iHpA/viewform"
+    method="POST"
+    target="newsletter_iframe"
+  >
+    <div class="newsletter-field">
+      <input
+        type="email"
+        name="entry.1416559483"
+        placeholder="Tu correo electrónico"
+        required
+      />
+      <button type="submit">Unirme</button>
     </div>
+  </form>
 
-  </div>
+  <small>
+    Al suscribirte aceptas nuestra política de privacidad.
+  </small>
+
+  <p class="newsletter-success" style="display:none;">
+    ✓ Gracias por unirte a la comunidad MD
+  </p>
+</div>
+
+<iframe name="newsletter_iframe" style="display:none;"></iframe>
+
 
   <div class="footer-bottom">
     <p>
@@ -524,11 +542,12 @@
 <!-- CTA WHATSAPP MOBILE -->
 <a
   href="https://wa.me/3018220451"
-  target="_blank"
   class="mobile-cta"
+  aria-label="Contactar por WhatsApp"
 >
-  Hablar con asesor MD
+  WhatsApp
 </a>
+
 
 </body>
 </html>
