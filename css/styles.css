@@ -928,3 +928,57 @@ select:hover {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
+
+/* ================================
+   FILTROS – GRID ESCALABLE
+================================ */
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+/* Cards mantienen tu estilo */
+.filters-grid .product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Imagen placeholder consistente */
+.filters-grid .product-image {
+  height: 180px;
+  background: #0b0d12;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .filters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-grid .product-image {
+    height: 160px;
+  }
+}
