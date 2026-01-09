@@ -920,3 +920,11 @@ select:hover {
     width: 100%;
   }
 }
+
+.newsletter-message {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #8fd3ff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}

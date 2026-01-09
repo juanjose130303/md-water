@@ -118,3 +118,21 @@ if (newsletterForm) {
     }, 800);
   });
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("newsletterForm");
+  const message = document.getElementById("newsletterMessage");
+
+  if (!form || !message) return;
+
+  form.addEventListener("submit", () => {
+    message.textContent = "Gracias por unirte 💙 Te escribiremos pronto.";
+    message.style.opacity = "1";
+
+    // Limpia el input después de enviar
+    setTimeout(() => {
+      form.reset();
+    }, 500);
+  });
+});

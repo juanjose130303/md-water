@@ -502,22 +502,26 @@
   </p>
 
   <form
+  id="newsletterForm"
   action="https://docs.google.com/forms/d/e/1FAIpQLScZpj4ZbJeck--2LjuWXYp1iMu8caCpJXEw0xb1VfkZW0iHpA/viewform?usp=header"
   method="POST"
   target="newsletter_iframe"
+  class="newsletter-form"
 >
-  <div class="newsletter-field">
-    <input
-      type="email"
-      name="entry.1416559483"
-      placeholder="Tu correo electrónico"
-      required
-    />
-    <button type="submit">Unirme</button>
-  </div>
+  <input
+    type="email"
+    name="entry.1416559483"
+    placeholder="Tu correo electrónico"
+    required
+  />
+
+  <button type="submit">Unirme</button>
+
+  <p id="newsletterMessage" class="newsletter-message"></p>
 </form>
 
 <iframe name="newsletter_iframe" style="display:none;"></iframe>
+
 
 
   <small>
